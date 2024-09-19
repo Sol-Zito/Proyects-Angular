@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Person } from '../person/person.module';
 
@@ -12,12 +18,16 @@ import { Person } from '../person/person.module';
 export class FormularioComponent {
   @Output() personaCreada = new EventEmitter<Person>();
 
-  nameUser: string = '';
-  lastnameUser: string = '';
-  jobUser: string = '';
+  @ViewChild('nameUser') nameUser: ElementRef;
+  @ViewChild('lastnameUser') lastnameUser: ElementRef;
+  @ViewChild('jobUser') jobUser: ElementRef;
 
   AddPerson() {
-    let person1 = new Person(this.nameUser, this.lastnameUser, this.jobUser);
+    let person1 = new Person(
+      this.nameUser.nativeElement.value,
+      this.lastnameUser.nativeElement.value,
+      this.jobUser.nativeElement.value
+    );
     this.personaCreada.emit(person1);
     console.log('se cargo persona');
   }
