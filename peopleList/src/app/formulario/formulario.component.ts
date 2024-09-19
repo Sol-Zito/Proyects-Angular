@@ -1,12 +1,7 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Person } from '../person/person.module';
+import { PeopleService } from '../personaService.service';
 
 @Component({
   selector: 'app-formulario',
@@ -16,7 +11,7 @@ import { Person } from '../person/person.module';
   styleUrl: './formulario.component.css',
 })
 export class FormularioComponent {
-  @Output() personaCreada = new EventEmitter<Person>();
+  constructor(private peopSer: PeopleService) {}
 
   @ViewChild('nameUser') nameUser: ElementRef;
   @ViewChild('lastnameUser') lastnameUser: ElementRef;
@@ -28,7 +23,7 @@ export class FormularioComponent {
       this.lastnameUser.nativeElement.value,
       this.jobUser.nativeElement.value
     );
-    this.personaCreada.emit(person1);
+    this.peopSer.addPersonToList(person1);
     console.log('se cargo persona');
   }
 }

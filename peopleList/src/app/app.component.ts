@@ -30,9 +30,4 @@ export class AppComponent implements OnInit {
     this.list = this.perSer.people;
     throw new Error('Method not implemented.');
   }
-
-  personaAgregada(person: Person) {
-    this.perSer.addPersonToList(person);
-    throw new Error('Method not implemented.');
-  }
 }
