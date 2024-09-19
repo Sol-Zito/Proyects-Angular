@@ -1,0 +1,36 @@
+<form>
+  <div class="form-group mb-3">
+    <label for="nameUser" class="form-label">Nombre: </label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese nombre"
+      name="nameUser"
+      [(ngModel)]="nameUser"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="lastnameUser" class="form-label">Apellido: </label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Apellido"
+      name="lastnameUser"
+      [(ngModel)]="lastnameUser"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="jobUser" class="form-label">Oficio: </label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Oficio"
+      name="jobUser"
+      [(ngModel)]="jobUser"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="AddPerson()">
+    Agregar
+  </button>
+</form>
