@@ -1,0 +1,41 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label>Operando A</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Escribir operando A"
+        [(ngModel)]="operandoA"
+        name="operandoA"
+      />
+    </div>
+    <div class="form-group">
+      <label>Operando B</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Escribir operando B"
+        [(ngModel)]="operandoB"
+        name="operandoB"
+      />
+    </div>
+
+    <div class="form-group mt-2">
+      Operacion a realizar:
+      <select
+        [(ngModel)]="opcionSeleccionado"
+        name="opcionSeleccionado"
+        class="form-select"
+      >
+        <option hidden>Open this select menu</option>
+        <option value="suma">suma</option>
+        <option value="resta">resta</option>
+        <option value="division">division</option>
+        <option value="mulplicacion">mulplicacion</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary mt-2" (click)="getTotal()">Calcular</button>
+  </form>
+</div>
