@@ -1,15 +1,16 @@
-<div class="container mt-2">
-  <div>
-    <h1>Lista de personas:</h1>
-    <app-person
-      *ngFor="let ele of list; let i = index"
-      [person]="ele"
-      [indEl]="i"
-    >
-    </app-person>
-  </div>
-  <div class="col">
-    <h2>Agregar personas</h2>
-    <app-formulario></app-formulario>
-  </div>
+<div class="box" id="heading">
+  <h1>Lista de personas:</h1>
+</div>
+<div class="box">
+  <app-person
+    *ngFor="let ele of list; let i = index"
+    [person]="ele"
+    [indEl]="i"
+  >
+  </app-person>
+</div>
+
+<div class="box">
+  <h2>Agregar personas</h2>
+  <app-formulario></app-formulario>
 </div>

@@ -1,6 +1,6 @@
 import { LoggingService } from './loggingService.service';
 import { Person } from './person/person.module';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -18,4 +18,6 @@ export class PeopleService {
     this.message.sendMessage('Se cargo persona: ' + person.name);
     this.people.push(person);
   }
+
+  saludar = new EventEmitter<number>();
 }

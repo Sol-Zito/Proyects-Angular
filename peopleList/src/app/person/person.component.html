@@ -1,9 +1,8 @@
-<div class="container">
-  <div>
+<div class="item">
+  <p>
     {{ indEl + 1 }}: Nombre: {{ person.name }}, Apellido: {{ person.lastname }},
     Oficio:
     {{ person.job }}
-    <button type="submit" class="ml-2 btn btn-info">Editar</button>
-  </div>
+  </p>
+  <button type="checkbox" (click)="saludo()">Editar</button>
 </div>
-<hr />
