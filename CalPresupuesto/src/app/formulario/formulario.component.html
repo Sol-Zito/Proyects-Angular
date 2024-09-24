@@ -1,0 +1,44 @@
+<form (ngSubmit)="f.form.valid && addElementToArr()" #f="ngForm">
+  <div class="agregar">
+    <div class="agregar_contenedor">
+      <select
+        (change)="tipoOperacion($event)"
+        class="agregar_tipo"
+        [ngClass]="{ redfocus: agregar_tipo === 'egresoOperacion' }"
+      >
+        <option value="ingresoOperacion" selected>+</option>
+        <option value="egresoOperacion">-</option>
+      </select>
+      <input
+        [ngClass]="{ redfocus: agregar_tipo === 'egresoOperacion' }"
+        type="text"
+        class="agregar_descripcion"
+        placeholder="Agregar Descripción"
+        name="descripcion"
+        [(ngModel)]="descripcion"
+        required
+      />
+      <input
+        [ngClass]="{ redfocus: agregar_tipo === 'egresoOperacion' }"
+        type="number"
+        class="agregar_valor"
+        placeholder="Valor"
+        name="valor"
+        [(ngModel)]="valor"
+        required
+      />
+      <div *ngIf="valor > 0; else elseBlock" style="display: inline-block">
+        <button class="agregar_btn" type="submit">
+          <i
+            class="ion-ios-checkmark-outline"
+            [ngClass]="{ red: agregar_tipo === 'egresoOperacion' }"
+          ></i>
+        </button>
+      </div>
+      <ng-template #elseBlock>
+        <button class="disabled" type="submit">
+          <i class="ion-ios-checkmark-outline"></i></button
+      ></ng-template>
+    </div>
+  </div>
+</form>
