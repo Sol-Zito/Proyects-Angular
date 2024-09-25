@@ -1,5 +1,5 @@
 import { LoggingService } from './loggingService.service';
-import { Person } from './person/person.module';
+import { Person } from './people/person/person.module';
 import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
@@ -19,5 +19,5 @@ export class PeopleService {
     this.people.push(person);
   }
 
-  saludar = new EventEmitter<number>();
+  saludar = new EventEmitter<string>();
 }

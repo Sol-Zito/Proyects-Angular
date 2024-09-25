@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Person } from './person.module';
-import { PeopleService } from '../personaService.service';
+import { PeopleService } from '../../personaService.service';
 
 @Component({
   selector: 'app-person',
@@ -16,7 +16,6 @@ export class PersonComponent {
   @Input() person: Person;
 
   saludo() {
-    this.perSer.saludar.emit(this.indEl);
-    throw new Error('Method not implemented.');
+    this.perSer.saludar.emit(this.person.name);
   }
 }

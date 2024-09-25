@@ -1,16 +1,14 @@
 <div class="box" id="heading">
   <h1>Lista de personas:</h1>
 </div>
-<div class="box">
-  <app-person
-    *ngFor="let ele of list; let i = index"
-    [person]="ele"
-    [indEl]="i"
-  >
-  </app-person>
+<!--
+<div class="">
+   <div *ngFor="let el of lista">
+    <p>{{ el.lastname }}</p>
+    <p>{{ el.name }}</p>
+    <button (click)="upperCase(el)">Upper</button>
+  </div> 
 </div>
-
-<div class="box">
-  <h2>Agregar personas</h2>
-  <app-formulario></app-formulario>
-</div>
+-->
+<router-outlet> </router-outlet>
+<!-- <app-people></app-people> -->
