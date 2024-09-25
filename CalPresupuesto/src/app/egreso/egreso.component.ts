@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Egreso } from './egreso.model';
-import { EgresoServicio } from './egreso.servicio';
+import { EgresoServicio } from './egreso.service';
 
 @Component({
   selector: 'app-egreso',

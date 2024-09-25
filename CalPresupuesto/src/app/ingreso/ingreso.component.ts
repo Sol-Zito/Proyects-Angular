@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingreso } from './ingreso.model';
-import { IngresoServicio } from './ingreso.servicio';
+import { IngresoServicio } from './ingreso.service';
 
 @Component({
   selector: 'app-ingreso',

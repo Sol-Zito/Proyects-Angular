@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IngresoServicio } from '../ingreso/ingreso.servicio';
-import { EgresoServicio } from '../egreso/egreso.servicio';
+import { IngresoServicio } from '../ingreso/ingreso.service';
+import { EgresoServicio } from '../egreso/egreso.service';
 import { Egreso } from '../egreso/egreso.model';
 import { Ingreso } from '../ingreso/ingreso.model';
 
