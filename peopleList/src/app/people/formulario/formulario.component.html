@@ -1,31 +1,53 @@
-<form class="item">
-  <div>
-    <label for="nameUser" class="form-label">Nombre: </label>
-    <input
-      type="text"
-      placeholder="Ingrese nombre"
-      name="nameUser"
-      [(ngModel)]="nameUser"
-    />
-  </div>
-  <div>
-    <label for="lastnameUser" class="form-label">Apellido: </label>
-    <input
-      type="text"
-      placeholder="Ingrese Apellido"
-      name="lastnameUser"
-      [(ngModel)]="lastnameUser"
-    />
-  </div>
-  <div>
-    <label for="jobUser" class="form-label">Oficio: </label>
-    <input
-      type="text"
-      placeholder="Ingrese Oficio"
-      name="jobUser"
-      [(ngModel)]="jobUser"
-    />
-  </div>
+<div class="box">
+  <h2>Agregar personas</h2>
 
-  <button type="submit" class="btn btn-primary" (click)="AddPerson()">+</button>
-</form>
+  <form
+    class="item"
+    #f="ngForm"
+    (ngSubmit)="f.form.valid && onGuardarPersona()"
+  >
+    <div>
+      <label for="nameUser" class="form-label">Nombre: </label>
+      <input
+        type="text"
+        placeholder="Ingrese nombre"
+        name="nameUser"
+        [(ngModel)]="nameUser"
+        required
+      />
+    </div>
+    <div>
+      <label for="lastnameUser" class="form-label">Apellido: </label>
+      <input
+        type="text"
+        placeholder="Ingrese Apellido"
+        name="lastnameUser"
+        [(ngModel)]="lastnameUser"
+        required
+      />
+    </div>
+    <div>
+      <label for="jobUser" class="form-label">Oficio: </label>
+      <input
+        type="text"
+        placeholder="Ingrese Oficio"
+        name="jobUser"
+        [(ngModel)]="jobUser"
+        required=""
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="cursor: pointer">
+      +
+    </button>
+    <button
+      *ngIf="index != null"
+      type="submit"
+      class="btn btn-red"
+      style="cursor: pointer"
+      (click)="deletePerson(index)"
+    >
+      -
+    </button>
+  </form>
+</div>

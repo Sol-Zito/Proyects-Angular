@@ -14,10 +14,26 @@ export class PeopleService {
 
   constructor(private message: LoggingService) {}
 
+  saludar = new EventEmitter<string>();
+
   addPersonToList(person: Person) {
     this.message.sendMessage('Se cargo persona: ' + person.name);
     this.people.push(person);
   }
 
-  saludar = new EventEmitter<string>();
+  findPerson(index: number) {
+    let person: Person = this.people[index];
+    return person;
+  }
+
+  deletePerson(arg0: number) {
+    this.people.splice(arg0, 1);
+  }
+
+  editPErson(indice: number, person: Person) {
+    let persona = this.people[indice];
+    persona.name = person.name;
+    persona.lastname = person.lastname;
+    persona.job = person.job;
+  }
 }

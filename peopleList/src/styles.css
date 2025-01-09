@@ -64,12 +64,16 @@ form {
 }
 
 button {
-  border-radius: 50%;
-  padding: 6px;
+  border-radius: 20%;
+  padding: 5px;
   border-color: transparent;
   background-color: #3F51B5;
   color: #fff;
   font-size: medium;
+}
+
+.btn-red {
+  background-color: red
 }
 
 button:hover {

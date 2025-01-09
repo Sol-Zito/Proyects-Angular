@@ -8,7 +8,7 @@ import { Person } from './people/person/person.module';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, PeopleComponent],
+  imports: [RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [PeopleService],

@@ -1,3 +1,7 @@
+<div style="text-align: center">
+  <button type="button" style="cursor: pointer" (click)="addPerson()">+</button>
+</div>
+
 <div class="box">
   <app-person
     *ngFor="let ele of list; let i = index"
@@ -7,7 +11,4 @@
   </app-person>
 </div>
 
-<div class="box">
-  <h2>Agregar personas</h2>
-  <app-formulario></app-formulario>
-</div>
+<router-outlet></router-outlet>

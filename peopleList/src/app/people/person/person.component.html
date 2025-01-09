@@ -1,8 +1,14 @@
 <div class="item">
-  <p>
-    {{ indEl + 1 }}: Nombre: {{ person.name }}, Apellido: {{ person.lastname }},
-    Oficio:
-    {{ person.job }}
-  </p>
-  <button type="checkbox" (click)="saludo()">Editar</button>
+  <ul>
+    <li>
+      <a
+        [routerLink]="['/personas', indEl]"
+        [queryParams]="{ modoEdicion: '1' }"
+        style="text-decoration: none"
+      >
+        {{ indEl + 1 }}: Nombre: {{ person.name }}, Apellido:
+        {{ person.lastname }}</a
+      >
+    </li>
+  </ul>
 </div>
