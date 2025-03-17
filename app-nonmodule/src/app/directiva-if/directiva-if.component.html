@@ -1,0 +1,44 @@
+<div class="container mt-5">
+  <!-- <h2>Estatus autenticado:</h2>
+
+  @if (isAutenticado) {
+  <p><strong>Autenticado</strong></p>
+  }@else {
+  <p class="text-muted">Aun no esta autenticado</p>
+  }
+  <button (click)="alternarAutenticacion()" class="btn btn-primary">
+    Autenticar?
+  </button> -->
+
+  <hr />
+
+  <div class="container mt-5">
+    <h3 class="text-center">Lista de tareas</h3>
+    <ul class="list-group w-50 mx-auto">
+      @if (tareas.length) { @for (tarea of tareas; track $index) {
+      <li class="list-group-item text-center">{{ tarea }}</li>
+      <!-- <li *ngFor="let tarea of tareas">{{ tarea }}</li> -->
+      } } @else{
+      <li>Aun no hay tareas</li>
+      }
+    </ul>
+  </div>
+  <div>
+    <div class="mt-3 d-flex justify-content-center">
+      <input
+        type="text"
+        #tareaInput
+        placeholder="Escribe la tarea:"
+        class="form-control mb-2 w-50"
+      />
+    </div>
+    <div class="mt-3 d-flex justify-content-center">
+      <button
+        (click)="agregarTarea(tareaInput.value)"
+        class="btn btn-primary w-50"
+      >
+        Agregar tarea
+      </button>
+    </div>
+  </div>
+</div>

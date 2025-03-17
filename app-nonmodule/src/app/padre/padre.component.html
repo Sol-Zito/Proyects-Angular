@@ -1,0 +1,8 @@
+<app-hijo
+  [mensaje]="mensajePadre"
+  (mensajeAPadre)="recibirMensaje($event)"
+></app-hijo>
+
+<div class="container text-center border my-4">
+  <strong>{{ recibido.toUpperCase() }}</strong>
+</div>
